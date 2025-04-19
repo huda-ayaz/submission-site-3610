@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Huda Ayaz's Content Form Assignment: Temperature Converter</title>
+  <link rel="stylesheet" href="content-form.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="bg-img">
+      <form id="tempForm" class="form">
+        <h1>Convert Temperature</h1>
+
+        <div class="radio">
+          <label>
+            <input type="radio" name="conversion" value="toCelsius" checked>
+            Fahrenheit → Celsius
+          </label>
+          <label>
+            <input type="radio" name="conversion" value="toFahrenheit">
+            Celsius → Fahrenheit
+          </label>
+        </div>
+
+        <div class="input-section">
+          <label id="inputLabel" for="tempInput"><b>Degrees in Fahrenheit</b></label>
+          <input
+            type="number"
+            step="any"
+            id="tempInput"
+            name="tempInput"
+            placeholder="Enter Fahrenheit"
+            required
+          />
+        </div>
+
+        <button type="submit" id="convertButton" class="home-button">
+          Convert to Celsius
+        </button>
+
+        <div class="result">
+          <output id="result"></output>
+        </div>
+      </form>
+    </div>
+
+    <button id="homeButton" class="home-button">
+      Return to Home
+    </button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
