@@ -1,29 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Huda Ayaz's Content Form Project</title>
-  <link rel="stylesheet" href="content-form.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Huda Ayaz's Content Form Assignment: Temperature Converter</title>
+  <link rel="stylesheet" href="content-form.css" />
 </head>
 <body>
   <div class="container">
     <div class="bg-img">
-      <form action="javascript:convert()" class="container form">
-        <h1>Convert Fahrenheit to Celsius</h1>
-    
-        <label for="fahrenheit"><b>Degrees in Fahrenheit</b></label>
-        <input type="text" placeholder="Enter Fahrenheit" name="fahrenheit" id="fahrenheit" required>
-        <div>
-          <button type="submit" class="home-button" id="convertButton">Convert to Celsius</button>
+      <form id="tempForm" class="form">
+        <h1>Convert Temperature</h1>
+
+        <div class="radio">
+          <label>
+            <input type="radio" name="conversion" value="toCelsius" checked>
+            Fahrenheit → Celsius
+          </label>
+          <label>
+            <input type="radio" name="conversion" value="toFahrenheit">
+            Celsius → Fahrenheit
+          </label>
         </div>
-        <div class="celsius">
-          <output type="text" placeholder="Celsius" name="celsius" id="celsius"></output>
+
+        <div class="input-section">
+          <label id="inputLabel" for="tempInput"><b>Degrees in Fahrenheit</b></label>
+          <input
+            type="number"
+            step="any"
+            id="tempInput"
+            name="tempInput"
+            placeholder="Enter Fahrenheit"
+            required
+          />
+        </div>
+
+        <button type="submit" id="convertButton" class="home-button">
+          Convert to Celsius
+        </button>
+
+        <div class="result">
+          <output id="result"></output>
         </div>
       </form>
     </div>
-    <button id="homeButton" class="home-button">Return to Home</button>
+
+    <button id="homeButton" class="home-button">
+      Return to Home
+    </button>
   </div>
-  <script src="./script.js"></script>
+
+  <script src="script.js"></script>
 </body>
 </html>

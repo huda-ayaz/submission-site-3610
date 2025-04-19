@@ -1,20 +1,43 @@
-function homeButton() {
-  document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("homeButton").addEventListener("click", function () {
-      window.location.href = "../index.html";
-    });
-  });
-}
+document.addEventListener("DOMContentLoaded", () => {
+  const homeBtn = document.getElementById("homeButton");
+  const form = document.getElementById("tempForm");
+  const toCelsiusRb = document.querySelector('input[value="toCelsius"]');
+  const toFahrRb = document.querySelector('input[value="toFahrenheit"]');
+  const inputLabel = document.getElementById("inputLabel");
+  const tempInput = document.getElementById("tempInput");
+  const convertBtn = document.getElementById("convertButton");
+  const resultOutput = document.getElementById("result");
 
-function convert() {
-  document.getElementById("convertButton").addEventListener("click", function () {
-    const input = document.getElementById("fahrenheit").value;
-    console.log(input);
-    const output = document.getElementById("celsius");
-    const celsius = (input - 32) * (5 / 9);
-    console.log(celsius);
-    output.value = celsius + "°C";
+  homeBtn.addEventListener("click", () => {
+    window.location.href = "../index.html";
   });
-}
 
-homeButton();
+  function updateFormUI() {
+    if (toCelsiusRb.checked) {
+      inputLabel.textContent = "Degrees in Fahrenheit";
+      tempInput.placeholder  = "Enter Fahrenheit";
+      convertBtn.textContent = "Convert to Celsius";
+    } else {
+      inputLabel.textContent = "Degrees in Celsius";
+      tempInput.placeholder  = "Enter Celsius";
+      convertBtn.textContent = "Convert to Fahrenheit";
+    }
+    resultOutput.textContent = "";
+  }
+  toCelsiusRb.addEventListener("change", updateFormUI);
+  toFahrRb.addEventListener("change", updateFormUI);
+  updateFormUI();
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const val = parseFloat(tempInput.value);
+
+    let converted;
+    if (toCelsiusRb.checked) {
+      converted = ((val - 32) * 5/9).toFixed(2) + " °C";
+    } else {
+      converted = ((val * 9/5) + 32).toFixed(2) + " °F";
+    }
+    resultOutput.textContent = converted;
+  });
+});
