@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Huda Ayaz's Canvas Form & Audio Assignment: Music Room</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="main">
+    <div class="form">
+      <div class="radio">
+        <span>Background: </span>
+        <label><input type="radio" name="bg" value="studio" checked> Studio</label>
+        <label><input type="radio" name="bg" value="classroom"> Classroom</label>
+        <label><input type="radio" name="bg" value="stage"> Stage</label>
+      </div>
+
+      <div class="checkbox">
+        <span>Instruments: </span>
+        <label><input type="checkbox" id="guitarCheck" checked> Guitar</label>
+        <label><input type="checkbox" id="keyboardCheck"> Keyboard</label>
+        <label><input type="checkbox" id="micCheck"> Microphone</label>
+      </div>
+
+      <div class="sliders">
+        <div class="slider-group">
+          <span>Guitar X: </span><input type="range" id="guitarX" min="0" max="1300" value="600">
+          <span>Guitar Y: </span><input type="range" id="guitarY" min="0" max="500" value="400">
+        </div>
+        <div class="slider-group">
+          <span>Keyboard X: </span><input type="range" id="keyboardX" min="0" max="1300" value="200">
+          <span>Keyboard Y: </span><input type="range" id="keyboardY" min="0" max="500" value="450">
+        </div>
+        <div class="slider-group">
+          <span>Mic X: </span><input type="range" id="micX" min="0" max="1300" value="1000">
+          <span>Mic Y: </span><input type="range" id="micY" min="0" max="500" value="350">
+        </div>
+      </div>
+
+      <div class="sounds">
+        <span>Sounds: </span>
+        <button id="sound1">Play the guitar!</button>
+        <button id="sound2">Play the keyboard!</button>
+        <button id="sound3">Start singing!</button>
+      </div>
+    </div>
+
+    <div class="container">
+      <canvas id="scene" width="1400" height="600"></canvas>
+    </div>
+
+    <div class="home">
+      <button id="homeButton">Return to Home</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
